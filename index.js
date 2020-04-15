@@ -2,7 +2,8 @@ const express=require("express")
 const http=require("http")
 const cors = require("cors");
 const app=express()
-http.createServer(app).listen("8080")
+const port=process.env.port||8080
+http.createServer(app).listen(port)
 app.use(cors());
 app.get("/graphdata/:id",(req,res,next)=>{
     const data={}
